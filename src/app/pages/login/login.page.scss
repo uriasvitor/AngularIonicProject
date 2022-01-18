@@ -1,0 +1,26 @@
+
+*{
+    padding: auto;
+    margin: auto;
+    text-align: center;
+}
+ion-item{
+    --background: #ffffff;
+    --color: #fff;
+}
+ion-input{
+    font-size: 26px;
+    --color: black;
+}
+ion-button{
+    margin-top: 40px;
+    --background: rgba(0, 194, 16, 0.685);
+}
+
+h3{
+    color: green;
+    margin-bottom: 10px;
+}
+ion-content{
+    top:20%
+}
