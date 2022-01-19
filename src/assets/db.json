@@ -1,0 +1,22 @@
+{
+    "pedidos": [
+      {	
+		"titulo":"NootBook",
+		"numero_serie":"Y19780124B",
+        "endereco":"Avendia Santo Amaro De Freitas",
+        "numero": 30,
+        "complemento": "perto do pé de manga",
+        "formaPagamento": "Boleto",
+        "pedido":"A9129BVM",
+        "orc":"876756",
+		"status":true,
+		"valor":"58.15",
+		"situacao":"1",
+		"produto_status":"EM TRANSPORTE",
+		"data":"6/ago",
+        "id": 1
+		
+      }
+    ]
+	
+}

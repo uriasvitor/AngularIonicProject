@@ -1,0 +1,39 @@
+
+.barStatus li{
+    display: inline;
+}
+
+.pedido{
+    text-align: center;
+    margin-left: -5%;
+    margin-right: 30%;
+}
+
+.pedidoBar{
+    text-align: center;
+    margin-left: -5%;
+    margin-right: 10%;
+}
+
+
+.infos{
+    margin-right: 35px;
+    width: 100%;
+}
+.productInfo{
+    margin-bottom: 30px;
+
+}
+li{
+    margin-top: 10px;
+    display: block;
+    list-style-type:none;
+}
+a{
+    display: block;
+    text-align: center;
+}
+
+ion-content{
+    text-align: center;
+}

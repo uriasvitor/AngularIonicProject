@@ -9,11 +9,11 @@ import { Router, RouterEvent } from '@angular/router';
 export class MenuPage implements OnInit {
 
   pages = [{
-      title: 'Frist Page',
+      title: 'Pedidos',
       url: '/menu/frist'
     }
     ,{
-      title:'Second Page',
+      title:'Listas',
       url: '/menu/second'
     }
   ];
