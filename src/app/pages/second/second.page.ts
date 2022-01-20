@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { projectService } from 'src/project-service';
 import { projeto } from 'src/projeto.model';
+import { CarrinhoPage } from '../carrinho/carrinho.page';
 
 @Component({
   selector: 'app-second',
@@ -13,7 +15,14 @@ export class SecondPage implements OnInit {
   listas:projeto[];
   currentStatus:any
 
-  constructor(private service:projectService) { }
+  constructor(
+    private service:projectService, 
+    private modalSecond:ModalController, 
+    public carro:CarrinhoPage
+    ) { }
+    
+  public getNewList():void{
+  }
 
   public getList():void{
     this.service.getAll().subscribe(data =>{
@@ -24,6 +33,10 @@ export class SecondPage implements OnInit {
     },error =>{
       console.log(error)
     })
+  }
+
+  public fecharModal(){
+    this.modalSecond.dismiss();
   }
 
   ngOnInit() {

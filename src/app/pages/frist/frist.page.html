@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Pedidos</ion-title>
+    <ion-title>Inbox</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
@@ -8,10 +8,9 @@
 </ion-header>
 
 <ion-content>
-<ion-card>
+<ion-card *ngFor="let product of produto;let i = index">
   <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>ion-item in a card, icon left, button right</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
+    <img [src]="product.imagens" style="width:54px; height:54px;border:4px solid rgb(1, 170, 1);" slot="start">
+    <ion-label size="auto">Você Comprou {{product.titulo}} e vai ser entregue em {{product.data}} <p>STATUS</p><b>{{statusCompra[product.situacao]}}</b></ion-label>
   </ion-item></ion-card>
 </ion-content>

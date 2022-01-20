@@ -13,4 +13,6 @@ export class projeto{
     orc:string;
     data:string;
     situacao:string;
+    imagens:Array<object>;
+    url:string;
 }

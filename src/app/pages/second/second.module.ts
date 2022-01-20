@@ -6,8 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { SecondPageRoutingModule } from './second-routing.module';
 
-import { SecondPage } from './second.page';
-
 @NgModule({
   imports: [
     CommonModule,

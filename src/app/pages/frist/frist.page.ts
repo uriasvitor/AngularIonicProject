@@ -9,14 +9,14 @@ import { projectService } from 'src/project-service';
   providers:[projectService]
 })
 export class FristPage implements OnInit {
-  listas:projeto[];
+  produto:projeto[];
   currentStatus:any
 
   constructor(private service:projectService) { }
 
   public getList():void{
     this.service.getAll().subscribe(data =>{
-      this.listas = data;
+      this.produto = data;
       this.currentStatus = data;
       console.log(data)
     
@@ -38,11 +38,8 @@ export class FristPage implements OnInit {
   ]
 
   public imagem =[
-    '../../../assets/img/progress2.png',
-    '../../../assets/img/progress3.png',
-    '../../../assets/img/progress4.png',
-    '../../../assets/img/progress5.png',
-    '../../../assets/img/progress6.png',
+    '../../../assets/fotos_produtos/fusivel.jpg',
+    '../../../assets/fotos_produtos/notebook.jpg',
   ]
 
 }

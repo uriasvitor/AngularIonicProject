@@ -9,9 +9,9 @@ import { Router, RouterEvent } from '@angular/router';
 export class MenuPage implements OnInit {
 
   pages = [{
-      title: 'Pedidos',
+      title: 'Inbox',
       url: '/menu/frist',
-      icon:'location-outline'
+      icon:'mail-open-outline'
     },
     {
       title:'Carrinho',
