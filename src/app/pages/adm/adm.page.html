@@ -11,5 +11,148 @@
   <h1>Aqui você pode Manipular o Aplicativo</h1>
   <h4>Criei esse Painel para visualização de como seria em produção.</h4>
   <h6>Funciona apenas com o JSON (API FAKE) Server Ativado</h6>
+<div class="formulario">
+  <div class="submit-form">
+    <div *ngIf="!criado">
+      <div class="form-group">
+        <label for="title">titulo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="titulo"
+          required
+          [(ngModel)]="produtos.titulo"
+          name="titulo"
+        />
+      </div>
 
+      <div class="form-group">
+        <label for="description">complemento</label>
+        <input
+          class="form-control"
+          id="complemento"
+          required
+          [(ngModel)]="produtos.complemento"
+          name="complemento"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">formaPagamento</label>
+        <select 
+          class="form-control"
+          id="formaPagamento"
+          [(ngModel)]="produtos.formaPagamento"
+          name="formaPagamento"
+        >
+          <option value="dinheiro">Dinheiro</option>
+          <option value="boleto">Boleto</option>
+          <option value="Credito">Credito</option>
+          <option value="debito">Débito</option>
+        </select>
+
+      <div class="form-group">
+        <label for="description">produto_status</label>
+        <select
+          class="form-control"
+          id="produto_status"
+          required
+          [(ngModel)]="produtos.produto_status"
+          name="produto_status">
+          <option value="RECEBIDO">RECEBIDO</option>
+          <option value="APROVADO">APROVADO</option>
+          <option value="SEPARADO">SEPARADO</option>
+          <option value="EM TRANSPORTE">EM TRANSPORTE</option>
+          <option value="FOI ENTREGUE">FOI ENTREGUE</option>
+      </select>
+      </div>
+
+      <div class="form-group">
+        <label for="description">valor</label>
+        <input
+          class="form-control"
+          id="valor"
+          required
+          [(ngModel)]="produtos.valor"
+          name="valor"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Numero do pedido</label>
+        <input
+          class="form-control"
+          id="pedido"
+          required
+          [(ngModel)]="produtos.pedido"
+          name="pedido"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">orc</label>
+        <input
+          class="form-control"
+          id="orc"
+          required
+          [(ngModel)]="produtos.orc"
+          name="orc"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">data</label>
+        <input type="date"
+          class="form-control"
+          id="data"
+          required
+          [(ngModel)]="produtos.data"
+          name="data"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">situacao</label>
+        <select
+          class="form-control"
+          id="situacao"
+          required
+          [(ngModel)]="produtos.situacao"
+          name="produto_status"
+        >
+          <option value="0">0 - RECEBIDO</option>
+          <option value="1">1 - APROVADO</option>
+          <option value="2">2 - SEPARADO</option>
+          <option value="3">3 - EM TRANSPORTE</option>
+          <option value="4">4 - FOI ENTREGUE</option>
+        </select>
+      </div>
+
+      </div>
+      
+      <button (click)="adicionar()" class="btn btn-success">Enviar Produto</button>
+    </div>
+
+    <div *ngIf="criado">
+      <br>
+      <h4>Produto Registrado Com sucesso</h4>
+      <button class="btn btn-success" (click)="novoProduto()">Adicionar Novo Produto</button>
+    </div>
+  </div>
+</div>
+
+<button routerLink="/menu/adm">ATUALIZAR PAGINA</button>
+
+<ion-card-content *ngFor="let produto of produtosList;let i = index">
+  <ion-item 
+    class="ion-activated"
+    [class.active]="i == indexAtual"
+    (click)="ativarLista(produto,i)">
+    <ion-label>
+      {{produto.titulo|uppercase}}
+    </ion-label>
+    <ion-button fill="outline" slot="end" color=""(click)="deletar()">DELETAR</ion-button>
+  </ion-item>
+
+</ion-card-content>
 </ion-content>

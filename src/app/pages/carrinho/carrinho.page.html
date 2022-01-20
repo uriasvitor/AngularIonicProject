@@ -14,10 +14,9 @@
       [class.active-item]="i == indexAtual"
       (click)="ativarLista(produto,i)">
       <ion-icon name="bag-handle-outline" slot="start" ></ion-icon>
-      <ion-col size="auto">
-      <ion-label>
-        VOCÊ COMPROU {{produto.titulo|uppercase}} {{produto.valor|currency}}
-      </ion-label></ion-col>
+      <ion-label size="auto">
+        Você Comprou {{produto.titulo|uppercase}} {{produto.valor|currency}}
+      </ion-label>
       <ion-button fill="outline" slot="end" (click)="showModal()">Ver Detalhes</ion-button>
     </ion-item>
 

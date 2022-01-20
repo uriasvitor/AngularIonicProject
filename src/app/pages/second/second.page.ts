@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { projectService } from 'src/project-service';
-import { projeto } from 'src/projeto.model';
+import { projetoService } from 'src/projetoService.service';
+import { projetoModel } from 'src/projeto.model';
 import { CarrinhoPage } from '../carrinho/carrinho.page';
 
 @Component({
   selector: 'app-second',
   templateUrl: './second.page.html',
   styleUrls: ['./second.page.scss'],
-  providers:[projectService],
+  providers:[projetoService],
 })
 
 export class SecondPage implements OnInit {
-  listas:projeto[];
+  listas:projetoModel[];
   currentStatus:any
 
   constructor(
-    private service:projectService, 
+    private service:projetoService, 
     private modalSecond:ModalController, 
     public carro:CarrinhoPage
     ) { }

@@ -1,4 +1,4 @@
-export class projeto{
+export class projetoModel{
     titulo:string;
     id?:any;
     endereco?:string;
@@ -14,5 +14,4 @@ export class projeto{
     data:string;
     situacao:string;
     imagens:Array<object>;
-    url:string;
 }

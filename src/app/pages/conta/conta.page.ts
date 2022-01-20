@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { projectService } from 'src/project-service';
+import { projetoService } from 'src/projetoService.service';
 
 @Component({
   selector: 'app-conta',
   templateUrl: './conta.page.html',
   styleUrls: ['./conta.page.scss'],
-  providers:[projectService]
+  providers:[projetoService]
 })
 export class ContaPage implements OnInit {
 
-  constructor(private service:projectService) { }
+  constructor(private service:projetoService) { }
 
   public get(){
     this.service.getAll().subscribe

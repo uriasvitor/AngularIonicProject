@@ -1,7 +1,7 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { projectService } from 'src/project-service';
-import { projeto } from 'src/projeto.model';
+import { projetoService } from 'src/projetoService.service';
+import { projetoModel } from 'src/projeto.model';
 import { FristPage } from '../frist/frist.page';
 import { SecondPage } from '../second/second.page';
 
@@ -9,22 +9,22 @@ import { SecondPage } from '../second/second.page';
   selector: 'app-carrinho',
   templateUrl: './carrinho.page.html',
   styleUrls: ['./carrinho.page.scss'],
-  providers:[projectService]
+  providers:[projetoService]
 })
 @Injectable({
   providedIn:'root'
 })
 export class CarrinhoPage implements OnInit {
 
-  public produtos:projeto[];
-  public produtoAtual: projeto;
+  public produtos:projetoModel[];
+  public produtoAtual: projetoModel;
   public indexAtual = -1;
   public title = '';
 
   ngOnInit():void {
     this.get();
   }
-  constructor(private service:projectService, private modalCtrl:ModalController) { }
+  constructor(private service:projetoService, private modalCtrl:ModalController) { }
 
   public async showModal(){
     const modal = await this.modalCtrl.create({
@@ -49,7 +49,7 @@ export class CarrinhoPage implements OnInit {
     this.indexAtual = 1;
   }
   @Input()
-  public ativarLista(produto:projeto,index:number):void{
+  public ativarLista(produto:projetoModel,index:number):void{
     this.produtoAtual = produto;
     this.indexAtual = index;
 

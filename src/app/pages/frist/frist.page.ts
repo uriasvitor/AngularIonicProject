@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { projeto } from 'src/projeto.model';
-import { projectService } from 'src/project-service';
+import { projetoModel } from 'src/projeto.model';
+import { projetoService } from 'src/projetoService.service';
 
 @Component({
   selector: 'app-frist',
   templateUrl: './frist.page.html',
   styleUrls: ['./frist.page.scss'],
-  providers:[projectService]
+  providers:[projetoService]
 })
 export class FristPage implements OnInit {
-  produto:projeto[];
+  produto:projetoModel[];
   currentStatus:any
 
-  constructor(private service:projectService) { }
+  constructor(private service:projetoService) { }
 
   public getList():void{
     this.service.getAll().subscribe(data =>{
