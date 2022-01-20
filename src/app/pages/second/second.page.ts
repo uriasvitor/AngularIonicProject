@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { projetoService } from 'src/projetoService.service';
 import { projetoModel } from 'src/projeto.model';
@@ -20,8 +20,9 @@ export class SecondPage implements OnInit {
     private modalSecond:ModalController, 
     public carro:CarrinhoPage
     ) { }
-    
-  public getNewList():void{
+
+    ngOnInit() {
+      this.getList();
   }
 
   public getList():void{
@@ -37,10 +38,6 @@ export class SecondPage implements OnInit {
 
   public fecharModal(){
     this.modalSecond.dismiss();
-  }
-
-  ngOnInit() {
-    this.getList();
   }
 
   public pedidos = [

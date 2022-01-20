@@ -5,7 +5,7 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content *ngFor="let list of listas">
+  <ion-content *ngFor="let list of listas; let i = index; first as isFirst">
     <ion-card-content>
       <div class="barStatus">
         <ul>
@@ -41,4 +41,6 @@
       <a style="color:green;">VER NOTA FISCAL</a>
       <button></button>
   </ion-content>
+
+
   

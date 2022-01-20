@@ -1,4 +1,4 @@
-import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Injectable, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { projetoService } from 'src/projetoService.service';
 import { projetoModel } from 'src/projeto.model';
@@ -15,14 +15,14 @@ import { SecondPage } from '../second/second.page';
   providedIn:'root'
 })
 export class CarrinhoPage implements OnInit {
-
+  
   public produtos:projetoModel[];
   public produtoAtual: projetoModel;
   public indexAtual = -1;
   public title = '';
 
-  ngOnInit():void {
-    this.get();
+  ngOnInit():void { 
+    this.get();   
   }
   constructor(private service:projetoService, private modalCtrl:ModalController) { }
 
@@ -42,17 +42,16 @@ export class CarrinhoPage implements OnInit {
     });
   }
 
-  
   public atualizarLista():void{
     this.get();
     this.produtoAtual = undefined
     this.indexAtual = 1;
   }
+
   @Input()
   public ativarLista(produto:projetoModel,index:number):void{
     this.produtoAtual = produto;
     this.indexAtual = index;
-
   }
 
 }

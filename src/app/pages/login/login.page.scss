@@ -13,14 +13,25 @@ ion-input{
     --color: black;
 }
 ion-button{
+    --border-radius: 16px;
+    line-height: 2;
+    width: 60%;
     margin-top: 40px;
     --background: rgba(0, 194, 16, 0.685);
 }
 
 h3{
-    color: green;
+    color: rgb(0, 255, 0);
     margin-bottom: 10px;
 }
 ion-content{
     top:20%
+}
+
+ion-item{
+    border: 5px solid rgb(158, 158, 158);
+    border-radius: 16px;
+    width: 80%;
+    margin-top: 16px;
+    --border-radius: 10px;
 }
