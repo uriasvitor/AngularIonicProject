@@ -18,7 +18,6 @@ export class projectService{
 
     update(id: any, data: any): Observable<any> {
         return this.http.put(`${api}/${id}`, data);
-      }
-    
-    
+    }
+
 }

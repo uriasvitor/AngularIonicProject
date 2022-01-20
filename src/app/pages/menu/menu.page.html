@@ -13,7 +13,7 @@
             routerDirection="root" 
              [routerLink]="p.url" 
              [class.active-item]="selectedPath === p.url">
-              {{p.title}}           
+             <ion-icon [name]="p.icon" slot="start"></ion-icon>{{p.title}}
           </ion-item>
         </ion-menu-toggle>
       </ion-list>

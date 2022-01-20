@@ -10,11 +10,23 @@ export class MenuPage implements OnInit {
 
   pages = [{
       title: 'Pedidos',
-      url: '/menu/frist'
-    }
-    ,{
-      title:'Listas',
-      url: '/menu/second'
+      url: '/menu/frist',
+      icon:'location-outline'
+    },
+    {
+      title:'Carrinho',
+      url: '/menu/carrinho',
+      icon:'cart-outline'
+    },
+    {
+      title:'Conta',
+      url: '/menu/conta',
+      icon:'person-circle-outline'
+    },
+    {
+      title:'Adm',
+      url: '/menu/adm',
+      icon:"options-outline"
     }
   ];
 

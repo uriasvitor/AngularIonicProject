@@ -17,6 +17,18 @@ const routes: Routes = [
       loadChildren:() => import ('../second/second.module').then(x => x.SecondPageModule)
     },
     {
+      path: 'conta',
+      loadChildren: () => import('../conta/conta.module').then( m => m.ContaPageModule)
+    },
+    {
+      path: 'carrinho',
+      loadChildren: () => import('../carrinho/carrinho.module').then( m => m.CarrinhoPageModule)
+    },
+    {
+      path: 'adm',
+      loadChildren: () => import('../adm/adm.module').then( m => m.AdmPageModule)
+    },
+    {
     path:'',
     redirectTo: '/menu'
   }

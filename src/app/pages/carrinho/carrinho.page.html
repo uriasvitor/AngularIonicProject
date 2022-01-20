@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carrinho</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content *ngFor="let produto of produtos;let i = index">
+    <ion-item 
+      class="ion-activated"
+      [class.active-item]="i == indexAtual"
+      (click)="ativarLista(produto,i)">
+      <ion-icon name="bag-handle-outline" slot="start" ></ion-icon>
+      <ion-label>
+        VOCÊ COMPROU {{produto.titulo|uppercase}} {{produto.valor|currency}}
+      </ion-label>
+      <ion-button fill="outline" slot="end" (click)="showModal()">Ver</ion-button>
+    </ion-item>
+
+  </ion-card-content>
+</ion-content>

@@ -1,4 +1,5 @@
 export class projeto{
+    titulo:string;
     id?:any;
     endereco?:string;
     numero?:number;

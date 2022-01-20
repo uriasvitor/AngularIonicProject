@@ -1,22 +1,38 @@
 {
     "pedidos": [
       {	
-		"titulo":"NootBook",
-		"numero_serie":"Y19780124B",
-        "endereco":"Avendia Santo Amaro De Freitas",
-        "numero": 30,
-        "complemento": "perto do pé de manga",
-        "formaPagamento": "Boleto",
-        "pedido":"A9129BVM",
-        "orc":"876756",
-		"status":true,
-		"valor":"58.15",
-		"situacao":"1",
-		"produto_status":"EM TRANSPORTE",
-		"data":"6/ago",
-        "id": 1
-		
-      }
+		  "titulo":"NootBook",
+		  "numero_serie":"Y19780124B",
+			"endereco":"Avendia Santo Amaro De Freitas",
+			"numero": 30,
+			"complemento": "perto do pé de manga",
+			"formaPagamento": "Boleto",
+			"pedido":"A9129BVM",
+			"orc":"876756",
+		    "status":true,
+		    "valor":"58.15",
+		    "situacao":1,
+		    "produto_status":"EM TRANSPORTE",
+		    "data":"6 de agosto",
+			"id": 1
+      },
+	  {
+		  "titulo":"Caixa de Fusivel",
+		  "numero_serie":"FBGKLM490",
+			"endereco":"Avenida Europa",
+			"numero": 15,
+			"complemento": "casa dos Fusiveis",
+			"formaPagamento": "Dinheiro",
+			"pedido":"K91029B",
+			"orc":"35312",
+		    "status":true,
+		    "valor":"158.15",
+		    "situacao":2,
+		    "produto_status":"EM TRANSPORTE",
+		    "data":"6 de agosto",
+			"id": 2
+	  }
+	  
     ]
 	
 }

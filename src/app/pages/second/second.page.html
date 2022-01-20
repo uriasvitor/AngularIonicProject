@@ -1,14 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Listas</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<h1>MANIPULATION PRODUCT</h1>
-
-<label for="situacao" name="situacao">Situacao</label>
-<input type="text" id="situacao">
-<button></button>
+    <ion-toolbar>
+      <ion-title>Pedidos</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content *ngFor="let list of listas">
+    <ion-card-content>
+      <div class="barStatus">
+        <ul>
+          <li class="pedido">Pedido: <b>{{list.pedido}}</b></li>
+          <li class="orc">Orc: <b>{{list.orc}}</b></li>
+      </ul>
+      </div>
+        <h1><b>PEDIDO {{statusCompra[list.situacao]}}</b></h1>
+    </ion-card-content>
+  
+      <div class="process">
+        <ion-card-content>
+          <div *ngIf="imagem">
+            <img src="{{imagem[list.situacao]}}">
+          </div>
+        <br>
+        </ion-card-content>
+      </div>
+      
+      <div class="productInfo">
+        <h4>{{productInfo[list.situacao]}}</h4>
+    </div>
+  
+    <div class="infos" *ngFor="let list of listas">
+      <li><b>Previsão para Entrega</b></li><li>{{list.data}}</li>
+      <li><b>Valor Total</b></li><li>{{list.valor |currency}}</li>
+      <li><b>Valor desconto</b></li><li>{{list.valor |currency}}</li>
+      <li><b>Endereço para Entrega</b></li><li>{{list.endereco}}</li>
+      <li><b>Forma Pagamento</b></li><li>{{list.formaPagamento}}</li>
+    </div>
+      <br>
+      <a style="color:green;">VER ITENS DO PEDIDO</a>
+      <a style="color:green;">VER NOTA FISCAL</a>
+      <button></button>
+  </ion-content>
+  
