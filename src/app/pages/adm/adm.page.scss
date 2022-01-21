@@ -1,8 +1,18 @@
+
 ion-content{
     text-align: center;
+    font-size: 0.9rem;
 }
 
 ion-label:hover{
     background-color: blueviolet;
     color: yellow;
+}
+
+input, label{
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+button{
+    margin-top: 15px;
 }

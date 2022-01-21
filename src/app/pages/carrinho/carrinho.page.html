@@ -13,9 +13,9 @@
       class="ion-activated"
       [class.active-item]="i == indexAtual"
       (click)="ativarLista(produto,i)">
-      <ion-icon name="bag-handle-outline" slot="start" ></ion-icon>
+      <ion-icon name="bag-handle-outline" slot="start" style="zoom:0.8;"></ion-icon>
       <ion-label size="auto">
-       Você Comprou {{produto.titulo|uppercase}} {{produto.valor|currency}} 
+       Você Comprou {{produto.titulo|uppercase}} {{produto.valor|currency}}
       </ion-label>
       <ion-button fill="outline" slot="end" (click)="showInfo()">Ver Detalhes</ion-button>
     </ion-item>
