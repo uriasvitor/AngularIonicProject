@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { projetoModel } from "./projeto.model";
 
 
-const api = 'http://localhost:3000/pedidos'
+export const api = 'https://api.npoint.io/dd729c91a6cd7c383b44/pedidos'
 @Injectable({
     providedIn:'root'
 })
@@ -22,7 +22,9 @@ export class projetoService{
     create(data: any): Observable<any> {
         return this.http.post(api, data);
       }
-    
+    get(id: any): Observable<projetoModel> {
+        return this.http.get<any>(`${api}/${id}`);
+      }
     delete(id: any): Observable<any> {
         return this.http.delete(`${api}/${id}`);
     }
@@ -30,4 +32,5 @@ export class projetoService{
     deleteAll(): Observable<any> {
         return this.http.delete(api);
     }
+
 }

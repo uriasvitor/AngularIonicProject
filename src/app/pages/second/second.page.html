@@ -1,40 +1,39 @@
 <ion-header>
     <ion-toolbar>
-      <ion-title>Informações do Produto</ion-title>
-      <ion-icon name="close-circle-outline" slot="primary" style="zoom:2.5;" (click)="fecharModal()"></ion-icon>
+      <ion-title>Informações do Produto : {{listas.titulo}}</ion-title>
+      <ion-icon name="close-circle-outline" slot="primary" style="zoom:2.5;" routerLink="/menu/carrinho" (click)="fecharModal()"></ion-icon>
     </ion-toolbar>
   </ion-header>
-  
-  <ion-content *ngFor="let list of listas; let i = index; first as isFirst">
+  <ion-content>
     <ion-card-content>
       <div class="barStatus">
         <ul>
-          <li class="pedido">Pedido: <b>{{list.pedido}}</b></li>
-          <li class="orc">Orc: <b>{{list.orc}}</b></li>
+          <li class="pedido">Pedido: <b>{{listas.pedido}}</b></li>
+          <li class="orc">Orc: <b>{{listas.orc}}</b></li>
       </ul>
       </div>
-        <h1><b>PEDIDO {{statusCompra[list.situacao]}}</b></h1>
+        <h1><b>PEDIDO {{statusCompra[listas.situacao]}}</b></h1>
     </ion-card-content>
   
       <div class="process">
         <ion-card-content>
           <div *ngIf="imagem">
-            <img src="{{imagem[list.situacao]}}">
+            <img src="{{imagem[listas.situacao]}}">
           </div>
         <br>
         </ion-card-content>
       </div>
       
       <div class="productInfo">
-        <h4>{{productInfo[list.situacao]}}</h4>
+        <h4>{{productInfo[listas.situacao]}}</h4>
     </div>
   
-    <div class="infos" *ngFor="let list of listas">
-      <li><b>Previsão para Entrega</b></li><li>{{list.data}}</li>
-      <li><b>Valor Total</b></li><li>{{list.valor |currency}}</li>
-      <li><b>Valor desconto</b></li><li>{{list.valor |currency}}</li>
-      <li><b>Endereço para Entrega</b></li><li>{{list.endereco}}</li>
-      <li><b>Forma Pagamento</b></li><li>{{list.formaPagamento}}</li>
+    <div class="infos">
+      <li><b>Previsão para Entrega</b></li><li>{{listas.data}}</li>
+      <li><b>Valor Total</b></li><li>{{listas.valor |currency}}</li>
+      <li><b>Valor desconto</b></li><li>{{listas.valor |currency}}</li>
+      <li><b>Endereço para Entrega</b></li><li>{{listas.endereco}}</li>
+      <li><b>Forma Pagamento</b></li><li>{{listas.formaPagamento}}</li>
     </div>
       <br>
       <a style="color:green;">VER ITENS DO PEDIDO</a>

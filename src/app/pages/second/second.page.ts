@@ -3,6 +3,8 @@ import { ModalController } from '@ionic/angular';
 import { projetoService } from 'src/projetoService.service';
 import { projetoModel } from 'src/projeto.model';
 import { CarrinhoPage } from '../carrinho/carrinho.page';
+import { Subscriber } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-second',
@@ -12,32 +14,48 @@ import { CarrinhoPage } from '../carrinho/carrinho.page';
 })
 
 export class SecondPage implements OnInit {
-  listas:projetoModel[];
+  listas?:projetoModel = {
+    titulo: '',
+    complemento: '',
+    formaPagamento: '',
+    status: false,
+    produto_status: '',
+    valor: '',
+    pedido: '',
+    ativo: false,
+    orc: '',
+    data: '',
+    situacao: '',
+    imagens: []
+  };
   currentStatus:any
 
   constructor(
     private service:projetoService, 
-    private modalSecond:ModalController, 
-    public carro:CarrinhoPage
-    ) { }
+    public route:ActivatedRoute
+    ){}
+    index:number
 
     ngOnInit() {
-      this.getList();
+      this.route.queryParams.subscribe((params:any)=>{
+        console.log(JSON.stringify(params.data))
+        this.index = params.data
+        this.getId(this.index);
+      })
+      
   }
 
-  public getList():void{
-    this.service.getAll().subscribe(data =>{
+  public getId(id:number):void{
+    this.service.get(id).subscribe(data=>{
       this.listas = data;
-      this.currentStatus = data;
-      console.log(data)
-    
-    },error =>{
-      console.log(error)
+      console.log(data);
+    },
+    error =>{
+      console.log(error);
     })
   }
-
+  
   public fecharModal(){
-    this.modalSecond.dismiss();
   }
 
   public pedidos = [

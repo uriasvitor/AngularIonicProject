@@ -16,6 +16,6 @@ import { SecondPage } from '../second/second.page';
     IonicModule,
     CarrinhoPageRoutingModule
   ],
-  declarations: [CarrinhoPage,SecondPage]
+  declarations: [CarrinhoPage]
 })
 export class CarrinhoPageModule {}

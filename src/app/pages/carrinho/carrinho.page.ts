@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Injectable, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Injectable, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { projetoService } from 'src/projetoService.service';
 import { projetoModel } from 'src/projeto.model';
-import { FristPage } from '../frist/frist.page';
 import { SecondPage } from '../second/second.page';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrinho',
@@ -14,23 +14,22 @@ import { SecondPage } from '../second/second.page';
 @Injectable({
   providedIn:'root'
 })
+
 export class CarrinhoPage implements OnInit {
-  
-  public produtos:projetoModel[];
   public produtoAtual: projetoModel;
+  public produtos:projetoModel[];
   public indexAtual = -1;
   public title = '';
+
+  @Output() public produtoImport:EventEmitter<any> = new EventEmitter<any>();
 
   ngOnInit():void { 
     this.get();   
   }
-  constructor(private service:projetoService, private modalCtrl:ModalController) { }
+  constructor(private service:projetoService,private route:Router) { }
 
-  public async showModal(){
-    const modal = await this.modalCtrl.create({
-      component: SecondPage
-    })
-    modal.present();
+  public async showInfo(){
+    this.route.navigate(['/menu/second'],{queryParams:{data:this.indexAtual}})
   }
 
   public get(){
@@ -47,11 +46,11 @@ export class CarrinhoPage implements OnInit {
     this.produtoAtual = undefined
     this.indexAtual = 1;
   }
-
-  @Input()
+  
   public ativarLista(produto:projetoModel,index:number):void{
     this.produtoAtual = produto;
     this.indexAtual = index;
+    this.produtoImport.emit(this.indexAtual)
   }
 
 }

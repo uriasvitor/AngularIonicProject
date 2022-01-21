@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { SecondPageRoutingModule } from './second-routing.module';
+import { SecondPage } from './second.page';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { SecondPageRoutingModule } from './second-routing.module';
     IonicModule,
     SecondPageRoutingModule
   ],
-  declarations: []
+  declarations: [SecondPage]
 })
 export class SecondPageModule {}

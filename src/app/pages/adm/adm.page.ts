@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { projetoService } from 'src/projetoService.service';
 import { projetoModel } from 'src/projeto.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { api } from 'src/projetoService.service';
 
 @Component({
   selector: 'app-adm',
@@ -10,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AdmPage implements OnInit {
   public criado:boolean = false;
+  public apis = api;
   public produtosList:projetoModel[];
   public produtoAtual: projetoModel;
   public indexAtual = -1;
@@ -98,8 +100,6 @@ export class AdmPage implements OnInit {
       imagens: []
     }
   }
-  
-
   
 
 }

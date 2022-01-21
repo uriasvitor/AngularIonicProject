@@ -15,9 +15,9 @@
       (click)="ativarLista(produto,i)">
       <ion-icon name="bag-handle-outline" slot="start" ></ion-icon>
       <ion-label size="auto">
-        Você Comprou {{produto.titulo|uppercase}} {{produto.valor|currency}}
+       Você Comprou {{produto.titulo|uppercase}} {{produto.valor|currency}} 
       </ion-label>
-      <ion-button fill="outline" slot="end" (click)="showModal()">Ver Detalhes</ion-button>
+      <ion-button fill="outline" slot="end" (click)="showInfo()">Ver Detalhes</ion-button>
     </ion-item>
 
   </ion-card-content>
