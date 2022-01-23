@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { projetoModel } from "./projeto.model";
 
 
-export const api = 'https://api.npoint.io/dd729c91a6cd7c383b44/pedidos'
+export const api = 'https://api.npoint.io/b919b5770e6ed23e5617/pedidos'
 @Injectable({
     providedIn:'root'
 })
