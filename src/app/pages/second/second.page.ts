@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { projetoService } from 'src/projetoService.service';
 import { projetoModel } from 'src/projeto.model';
@@ -42,13 +42,13 @@ export class SecondPage implements OnInit {
         this.index = params.data
         this.getId(this.index);
       })
-      
   }
 
   public getId(id:number):void{
     this.service.get(id).subscribe(data=>{
       this.listas = data;
       console.log(data);
+      this.mudarImagem(this.listas.situacao);
     },
     error =>{
       console.log(error);
@@ -80,12 +80,60 @@ export class SecondPage implements OnInit {
     "Pedido entregue.Agradecemos por escolher o DAG para Abastecer seu estoque."
   ]
 
-  public imagem =[
-    '../../../assets/img/progress2.png',
-    '../../../assets/img/progress3.png',
-    '../../../assets/img/progress4.png',
-    '../../../assets/img/progress5.png',
-    '../../../assets/img/progress6.png',
-  ]
+  public imagem =[]
+  public dotColor = ''
+
+  public mudarImagem(listas:any){
+
+    switch (listas){
+      case 0:{
+        this.imagem = [
+          "../../../assets/icon/cell.png",
+          "../../../assets/icon/att.png",
+        ],
+        this.dotColor = 'green';
+        break;
+      }
+      case 1:{
+        this.imagem = [
+          "../../../assets/icon/cell.png",
+          "../../../assets/icon/v.png",
+          "../../../assets/icon/att.png",
+        ]
+        break;
+      }
+      case 2:{
+        this.imagem = [
+          "../../../assets/icon/cell.png",
+          "../../../assets/icon/v.png",
+          "../../../assets/icon/box1.png",
+          "../../../assets/icon/att.png",
+        ]
+        break;
+      }
+      case 3:{
+        this.imagem = [
+          "../../../assets/icon/cell.png",
+          "../../../assets/icon/v.png",
+          "../../../assets/icon/box1.png",
+          "../../../assets/icon/box2.png",
+          "../../../assets/icon/att.png",
+        ]
+        break;
+      }
+      case 4:{
+        this.imagem = [
+          "../../../assets/icon/cell.png",
+          "../../../assets/icon/v.png",
+          "../../../assets/icon/box1.png",
+          "../../../assets/icon/box2.png",
+          "../../../assets/icon/truck.png",
+        ]
+        break;
+      }
+    }
+    console.log(listas)
+    return listas
+  }
 
 }

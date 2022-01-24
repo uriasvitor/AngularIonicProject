@@ -33,6 +33,23 @@
       "data": "6 de agosto",
       "imagens": "/assets/fotos_produtos/fusivel.jpg",
       "id": 2
+    },
+    {
+      "titulo": "ParaFuso",
+      "numero_serie": "FMBGK90L4",
+      "endereco": "Avenida Euparo",
+      "numero": 23,
+      "complemento": "casa dos ParaFusos",
+      "formaPagamento": "Dinheiro",
+      "pedido": "K99B102",
+      "orc": "32531",
+      "status": true,
+      "valor": "242.15",
+      "situacao": 4,
+      "produto_status": "RECEBIDO",
+      "data": "12 de dezembro",
+      "imagens": "/assets/fotos_produtos/fusivel.jpg",
+      "id": 3
     }
   ]
 }

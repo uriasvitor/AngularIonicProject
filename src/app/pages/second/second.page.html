@@ -6,20 +6,23 @@
   </ion-header>
   <ion-content>
     <ion-card-content>
-      <div class="barStatus">
-        <ul>
-          <li class="pedido">Pedido: <b>{{listas.pedido}}</b></li>
-          <li class="orc">Orc: <b>{{listas.orc}}</b></li>
-      </ul>
+      <div id="barStatus">
+        <li class="pedido">Pedido: <b>{{listas.pedido}}</b></li>
+        <li class="orc">Orc: <b>{{listas.orc}}</b></li>
       </div>
         <h1><b>PEDIDO {{statusCompra[listas.situacao]}}</b></h1>
     </ion-card-content>
   
       <div class="process">
         <ion-card-content>
-          <div *ngIf="imagem">
-            <img src="{{imagem[listas.situacao]}}">
-          </div>
+            <div class="dots" style="text-align:center">
+              <span class="dot" [style.background-color]="dotColor"><img src="{{imagem[0]}}"></span>
+              <span class="dot" [style.background-color]="dotColor"><img src="{{imagem[1]}}"></span>
+              <span class="dot" [style.background-color]="dotColor"><img src="{{imagem[2]}}"></span>
+              <span class="dot" [style.background-color]="dotColor"><img src="{{imagem[3]}}"></span>
+              <span class="dot" [style.background-color]="dotColor"><img src="{{imagem[4]}}"></span>
+            </div>
+            
         <br>
         </ion-card-content>
       </div>

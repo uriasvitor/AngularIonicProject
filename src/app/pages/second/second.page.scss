@@ -6,9 +6,13 @@ ion-title{
 }
 
 .pedido{
+    justify-content: space-between;
     text-align: center;
-    margin-left: -5%;
-    margin-right: 30%;
+}
+img{
+    height: 75px;
+    width: 75px;
+    filter: invert(100%) sepia(0%) saturate(3207%) hue-rotate(130deg) brightness(100%) contrast(100%);
 }
 
 .pedidoBar{
@@ -16,8 +20,28 @@ ion-title{
     margin-left: -5%;
     margin-right: 10%;
 }
-
-
+.dot {
+    height: 85px;
+    width: 85px;
+    background-color: #bbb;
+    border-radius: 50%;
+    border: 5px solid;
+    display: inline-block;
+    justify-self: unset;
+}
+span{
+    font-size: 12px;
+}
+.dots{
+    
+}
+#barStatus {
+    margin-bottom: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+  
 .infos{
     margin-right: 35px;
     width: 100%;
