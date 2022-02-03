@@ -99,6 +99,7 @@ export class SecondPage implements OnInit {
           "../../../assets/icon/cell.png",
           "../../../assets/icon/v.png",
           "../../../assets/icon/att.png",
+          this.dotColor = 'green'
         ]
         break;
       }
@@ -108,6 +109,7 @@ export class SecondPage implements OnInit {
           "../../../assets/icon/v.png",
           "../../../assets/icon/box1.png",
           "../../../assets/icon/att.png",
+          this.dotColor = 'green'
         ]
         break;
       }
@@ -118,6 +120,7 @@ export class SecondPage implements OnInit {
           "../../../assets/icon/box1.png",
           "../../../assets/icon/box2.png",
           "../../../assets/icon/att.png",
+          this.dotColor = 'green'
         ]
         break;
       }
@@ -128,6 +131,7 @@ export class SecondPage implements OnInit {
           "../../../assets/icon/box1.png",
           "../../../assets/icon/box2.png",
           "../../../assets/icon/truck.png",
+          this.dotColor = 'green'
         ]
         break;
       }
